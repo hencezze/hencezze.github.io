@@ -1,5 +1,5 @@
 #Git
-<img class="imageLeft" src="/git.png" alt="Ed" />
+<img class="imageLeft" src="/git.png" alt="Ed" width="200" height="100" />
 
 #Powershell
 <img class="imageLeft" src="/powershell.png" alt="Ed" />
