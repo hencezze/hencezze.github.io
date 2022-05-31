@@ -1,4 +1,7 @@
-<body style=»background-color: #55D52B»>
+div {
+  background-color: #b2b2b2;
+  background-color: rgba(0, 0, 0, .3);
+}
 #Git
 <img class="imageLeft" src="/git.png" alt="Ed" width="400" height="100" />
 
