@@ -1,3 +1,4 @@
+<body style=»background-color: #55D52B»>
 #Git
 <img class="imageLeft" src="/git.png" alt="Ed" width="400" height="100" />
 
