@@ -1,0 +1,14 @@
+<p style="text-align: center;"><strong>Recover closed file</strong></p>
+<p style="text-align: left;">For first you should to get sure: mounted procfs to /proc and installed in yours VM lsof</p>
+<p style="text-align: left;">After you need to find file, whick you are searching: <em><span style="text-decoration: underline;">sudo lsof | grep filename</span></em></p>
+<p style="text-align: left;">From this output you should to get 2 variables:</p>
+<ol>
+<li style="text-align: left;">Number of process (pid)</li>
+<li style="text-align: left;">File descriptor (file descriptor)</li>
+</ol>
+<p>In example: <span style="text-decoration: underline;">kwin&nbsp;<strong>2031(pid)</strong>&nbsp;4002&nbsp;anton&nbsp;<strong>2(file descriptor)</strong>w REG 253,3 4486557 1835028 filename</span></p>
+<p>And you copy this variables as a path to file: <em><span style="text-decoration: underline;">sudo cp /proc/2031/fd/2 /home/anton/.xsession-error</span></em></p>
+<hr />
+<p>Or if you want to get all files, which programm opened and still get opened</p>
+<p>sudo lsof | grep filename and take&nbsp;<strong>pid</strong> from this output and grep "deleted" files</p>
+<p>Or you may check opened files via this command: <em><span style="text-decoration: underline;">ls -lia /proc/2031/fd/</span></em>, but you still need to know&nbsp;<strong>pid</strong></p>
