@@ -4,3 +4,17 @@
 <p># The packages in the `buildInputs` list will be added to the PATH in our shell<br />buildInputs = [<br /># cowsay is an arbitary package<br /># see https://nixos.org/nixos/packages.html to search for more<br />pkgs.cowsay<br />pkgs.curl<br />];</p>
 <p>shellHook = ''<br />echo "Welcome!" | cowsay;<br />ls;<br />export DEGUG=1<br />'';</p>
 <p>}</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre><span class="p">{</span> stdenv<span class="p">,</span> python <span class="p">}:</span>
+stdenv<span class="o">.</span>mkDerivation <span class="p">{</span>
+  <span class="ss">buildInputs =</span> <span class="p">[</span> python <span class="p">];</span>
+  <span class="ss">name =</span> <span class="s2">"some-package"</span><span class="p">;</span>
+  <span class="ss">version =</span> <span class="s2">"0.0.1"</span><span class="p">;</span>
+  <span class="ss">src =</span> <span class="l">/home/yourname/path/to/project</span><span class="p">;</span> <span class="c1"># can be a local path, or fetchFromGitHub, fetchgit, ...</span>
+<span class="p">}</span>
+</pre>
+</div>
+<p>Then you can start a development shell with</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr">
+<pre>nix-shell -E <span class="s1">'with import &lt;nixpkgs&gt; { }; callPackage ./default.nix { }'</span></pre>
+</div>
