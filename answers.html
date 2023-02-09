@@ -76,21 +76,65 @@
 <p>&nbsp; &nbsp; &nbsp; &nbsp; For example we have a big routine, on which we should to execute long command, for&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; speed up this work we can create aliases for this command and retake long command to a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1-2 letters</p>
 <ul dir="auto">
 <li>How do you set the mail address of the root/a user?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Add .forward file in root home dir or in home dir of current user</p>
+<ul dir="auto">
 <li>What does CTRL-c do?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Send a signal about politely shutdown</p>
+<ul dir="auto">
 <li>What does CTRL-d do?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Closes the input into file, for example if you are writing some text into .txt file and exec ctrl + d and after this file will close</p>
+<ul dir="auto">
 <li>What does CTRL-z do?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; Move programs into background, you can exec it again via fg(represent on main screen) or bg(only exec again) command</p>
+<ul dir="auto">
 <li>What is in /etc/services?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Gives alias between command and port, which can be used for this command</p>
+<ul dir="auto">
 <li>How to redirect STDOUT and STDERR in bash? (&gt; /dev/null 2&gt;&amp;1)</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &amp;&gt;file or &gt;&amp;file</p>
+<ul dir="auto">
 <li>What is the difference between UNIX and Linux.</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Unix close projects and people use them for specifical purpose</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; Linux open-source system, whic has different version for different purpouses, but not standartized</p>
+<ul dir="auto">
 <li>What is the difference between Telnet and SSH?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; telnet haven't secure connection via crypted keys and confirmation of authenticity, but ssh has all of this</p>
+<ul dir="auto">
 <li>Explain the three load averages and what do they indicate. What command can be used to view the load averages?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 1-10-15min, 1CPU=1LA or 100%</p>
+<ul dir="auto">
 <li>Can you name a lower-case letter that is not a valid option for GNU&nbsp;<code>ls</code>?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-e, <strong>useless question</strong></p>
+<ul dir="auto">
 <li>What is a Linux kernel module?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; expansion of kernel, which allows to plug new devices or execute new commands for kernel</p>
+<ul dir="auto">
 <li>Walk me through the steps in booting into single user mode to troubleshoot a problem.</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; While grub starting press SHIFT and add "single" word in fin of line or may write 1</p>
+<ul dir="auto">
 <li>Walk me through the steps you'd take to troubleshoot a 404 error on a web application you administer.</li>
-<li>What is ICMP protocol? Why do you need to use?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 404 error only will be with static files and if we see 404 need to check cfg file in your web-server and if all correct in conf file - should to check are file exist on asking in cfg file?</p>
+<ul dir="auto">
+<li>What is ICMP(intern contr mess prot) protocol? Why do you need to use?</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; It is&nbsp;<strong>used</strong>&nbsp;by network devices, including routers, to send error messages and operational information indicating success or failure when communicating with another IP address, for example, an error is indicated when a requested service is not available or that a host or router could not be reached.</p>
+<ul dir="auto">
 <li>What is man section? How many manual sections are there?</li>
 <li>How can you get the man section description?</li>
-<li>Which keys on a keyboard most used in a terminal session?</li>
 <li>What is the difference between commands set and env?</li>
 </ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; set - local shell env, like a=1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; env - define env for all shells like export x=1</p>
