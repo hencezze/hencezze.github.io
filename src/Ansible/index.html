@@ -1,0 +1,82 @@
+<h1><strong>Ansible startup</strong></h1>
+<p><span class="file-path"><span class="sep">You can define vars to all groups in inventory file or single host in </span></span><strong><span class="file-path"><span class="sep"><em>/</em></span></span><span class="file-path"><em>group_vars</em></span><em><span class="sep">/</span><span class="stub">all.yaml</span></em></strong></p>
+<pre><span class="l l-Scalar l-Scalar-Plain">Also you can check magic variables via '<em>ansible hostname -m setup</em>' command<br /></span></pre>
+<pre class="highlight"><code>ansible-<span class="notranslate">galaxy</span></code> init {{ role_name }}<br /><br /></pre>
+<p><strong>Currently, Ansible ships with two persistent cache plugins: redis and jsonfile.</strong></p>
+<p><span>To configure fact caching using redis, enable it in&nbsp;as follows:</span><code class="docutils literal notranslate"><span class="pre">ansible.cfg</span></code></p>
+<div class="highlight-YAML+Jinja notranslate">
+<div class="highlight">
+<pre><em><span class="p p-Indicator">[</span><span class="nv">defaults</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">gathering = smart</span>
+<span class="l l-Scalar l-Scalar-Plain">fact_caching = redis</span>
+<span class="l l-Scalar l-Scalar-Plain">fact_caching_timeout = 86400</span></em>
+<span class="l l-Scalar l-Scalar-Plain"># seconds</span>
+</pre>
+</div>
+</div>
+<p>To get redis up and running, perform the equivalent OS commands:</p>
+<div class="highlight-YAML+Jinja notranslate">
+<div class="highlight">
+<pre><em><span class="l l-Scalar l-Scalar-Plain">yum install redis</span>
+<span class="l l-Scalar l-Scalar-Plain">service redis start</span>
+<span class="l l-Scalar l-Scalar-Plain">pip install redis<br /></span></em></pre>
+<hr /></div>
+</div>
+<h2>Accessing complex variable data</h2>
+<p>We already described facts a little higher up in the documentation.</p>
+<p><span>Some provided facts, like networking information, are made available as nested data structures. To access them a simple is not sufficient, but it is still easy to do. Here&rsquo;s how we get an IP address:</span></p>
+<div class="highlight-YAML+Jinja notranslate">
+<div class="highlight">
+<pre><em><span class="cp">{{</span> <span class="nv">ansible_facts</span><span class="o">[</span><span class="s2">"eth0"</span><span class="o">][</span><span class="s2">"ipv4"</span><span class="o">][</span><span class="s2">"address"</span><span class="o">]</span> <span class="cp">}}</span>
+</em></pre>
+</div>
+</div>
+<p>OR alternatively:</p>
+<div class="highlight-YAML+Jinja notranslate">
+<div class="highlight">
+<pre><em><span class="cp">{{</span> <span class="nv">ansible_facts.eth0.ipv4.address</span> <span class="cp">}}<br /></span></em></pre>
+<hr />
+<h2><span style="color: #000000;">Accessing information about other hosts with magic variables</span></h2>
+<p>Whether or not you define any variables, you can access information about your hosts with the&nbsp;<a class="reference internal" href="https://docs.ansible.com/ansible/2.9/reference_appendices/special_variables.html#special-variables"><span class="std std-ref">Special Variables</span></a>&nbsp;Ansible provides, including &ldquo;magic&rdquo; variables, facts, and connection variables. Magic variable names are reserved - do not set variables with these names. The variable&nbsp;is also reserved.<code class="docutils literal notranslate"><span class="pre">environment</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre"><strong>Hostvars</strong></span></code>&nbsp;lets you access variables for another host, including facts that have been gathered about that host. You can access host variables at any point in a playbook. Even if you haven&rsquo;t connected to that host yet in any play in the playbook or set of playbooks, you can still get the variables, but you will not be able to see the facts.</p>
+<p>If your database server wants to use the value of a &lsquo;fact&rsquo; from another node, or an inventory variable assigned to another node, it&rsquo;s easy to do so within a template or even an action line:</p>
+<div class="highlight-YAML+Jinja notranslate">
+<div class="highlight">
+<pre><em><span class="cp">{{</span> <span class="nv">hostvars</span><span class="o">[</span><span class="s1">'test.example.com'</span><span class="o">][</span><span class="s1">'ansible_facts'</span><span class="o">][</span><span class="s1">'distribution'</span><span class="o">]</span> <span class="cp">}}</span>
+</em></pre>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre"><strong>Groups</strong></span></code>&nbsp;is a list of all the groups (and hosts) in the inventory. This can be used to enumerate all hosts within a group. For example:</p>
+<div class="highlight-jinja notranslate">
+<div class="highlight">
+<pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">host</span> <span class="k">in</span> <span class="nv">groups</span><span class="o">[</span><span class="s1">'app_servers'</span><span class="o">]</span> <span class="cp">%}</span>
+<span class="x">   # something that applies to all app servers.</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre>
+</div>
+</div>
+<p>A frequently used idiom is walking a group to find all IP addresses in that group.</p>
+<div class="highlight-jinja notranslate">
+<div class="highlight">
+<pre><span class="cp">{%</span> <span class="k">for</span> <span class="nv">host</span> <span class="k">in</span> <span class="nv">groups</span><span class="o">[</span><span class="s1">'app_servers'</span><span class="o">]</span> <span class="cp">%}</span>
+   <span class="cp">{{</span> <span class="nv">hostvars</span><span class="o">[</span><span class="nv">host</span><span class="o">][</span><span class="s1">'ansible_facts'</span><span class="o">][</span><span class="s1">'eth0'</span><span class="o">][</span><span class="s1">'ipv4'</span><span class="o">][</span><span class="s1">'address'</span><span class="o">]</span> <span class="cp">}}</span>
+<span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span>
+</pre>
+</div>
+</div>
+<p>You can use this idiom to point a frontend proxy server to all of the app servers, to set up the correct firewall rules between servers, etc. You need to make sure that the facts of those hosts have been populated before though, for example by running a play against them if the facts have not been cached recently.</p>
+<p><code class="docutils literal notranslate"><span class="pre"><strong>Group_names</strong></span></code>&nbsp;is a list (array) of all the groups the current host is in. This can be used in templates using Jinja2 syntax to make template source files that vary based on the group membership (or role) of the host:</p>
+<div class="highlight-jinja notranslate">
+<div class="highlight">
+<pre><span class="cp">{%</span> <span class="k">if</span> <span class="s1">'webserver'</span> <span class="k">in</span> <span class="nv">group_names</span> <span class="cp">%}</span>
+<span class="x">   # some part of a configuration file that only applies to webservers</span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}<br /></span></pre>
+<hr />
+<pre><span class="cp"><br /></span>
+</pre>
+</div>
+</div>
+<p><strong><code class="docutils literal notranslate"></code></strong><em><span class="cp"><br /></span></em></p>
+</div>
+</div>
+<pre><span class="l l-Scalar l-Scalar-Plain">&nbsp;</span></pre>
