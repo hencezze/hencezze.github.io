@@ -68,11 +68,11 @@
 <li style="text-align: left;">Via crontab -e</li>
 </ul>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; You may manually add job into crontab, for instance 23 59 * * * for exec job every day on 23:59, but you can create a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; little pipeline like this:</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; crontab -l &gt; new_script # for backup already existing scheduled jobs</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; echo "0 */12 * * * $k8s_dir/provisioning/get_evicted_pods.sh" &gt;&gt; new_script # schedule a new job<br />&nbsp; &nbsp; &nbsp; &nbsp; crontab new_script # Add into system cron<br />&nbsp; &nbsp; &nbsp; &nbsp; rm new_script # deleting unwanted backup</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; <strong>crontab -l &gt; new_script # for backup already existing scheduled jobs</strong></p>
+<p><strong>&nbsp; &nbsp; &nbsp; &nbsp; echo "0 */12 * * * $k8s_dir/provisioning/get_evicted_pods.sh" &gt;&gt; new_script # schedule a new job</strong><br /><strong>&nbsp; &nbsp; &nbsp; &nbsp; crontab new_script # Add into system cron</strong><br /><strong>&nbsp; &nbsp; &nbsp; &nbsp; rm new_script # deleting unwanted backup</strong></p>
 <ul>
 <li>&nbsp;Via crontab files</li>
 </ul>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; sudo vi /etc/corn.daily/basckup for instance. Via this command you will create a backup named job, which will exec&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; every day</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; If you want troubleshoot some crontab error may use "grep CRON /var/log/syslog" for get a simple view about all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executed jobs</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; And for fin you able to run all daily/mounthly/... jobs via this command "sudo run-paths /etc/cron.daily/"</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; If you want troubleshoot some crontab error may use "<strong>grep CRON /var/log/syslog</strong>" for get a simple view about all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executed jobs</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; And for fin you able to run all daily/mounthly/... jobs via this command "<strong>sudo run-paths /etc/cron.daily/</strong>"</p>
