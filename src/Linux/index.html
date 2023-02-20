@@ -60,19 +60,32 @@
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>
+<p>While you working with Linux you can switch RunLevels via <strong>telinit</strong> 1/2/3/4/5/6 commands, but you can define default value of runlevel in <strong>/etc/inittab</strong></p>
+<p>But nowadays added a new definitions of runlevels:</p>
+<ul>
+<li>Runlevel 0 = poweroff.target (runlevel0.target)</li>
+<li>Runlevel 1 = rescue.target (runlevel1.target)</li>
+<li>Runlevel 2 = multi-user.target (runlevel2.target)</li>
+<li>Runlevel 3 = multi-user.target (runlevel3.target)</li>
+<li>Runlevel 4 = multi-user.target (runlevel4.target)</li>
+<li>Runlevel 5 = graphical.target (runlevel5.target)</li>
+<li>Runlevel 6 = reboot.target (runlevel6.target)</li>
+</ul>
+<p>And a new runlevels stored into <strong><span class="pln">ls </span><span class="pun">-</span><span class="pln">l </span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">systemd</span><span class="pun">/</span><span class="pln">system</span><span class="pun">/</span><span class="pln">runlevel</span><span class="pun">*</span></strong><span class="pun">, but it simple symlinks to runlevels 1...6, if yoo want to to switch default runlevel target - exec</span></p>
+<pre class="prettyprint"><strong><span class="pln">ln </span><span class="pun">-</span><span class="pln">sf </span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">systemd</span><span class="pun">/</span><span class="pln">system</span><span class="pun">/</span><span class="pln">runlevel3</span><span class="pun">.</span><span class="pln">target </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">systemd</span><span class="pun">/</span><span class="pln">system</span><span class="pun">/</span><span class="kwd">default</span><span class="pun">.</span><span class="pln">target, </span></strong><span class="pln">you just rewrite symlink for default target<br /><br />And if you want to see dependencies of each target you may use</span></pre>
+<pre class="prettyprint"><strong><span class="pln">systemctl list</span><span class="pun">-</span><span class="pln">dependencies graphical</span><span class="pun">.</span><span class="pln">target</span></strong></pre>
 <h1 style="text-align: center;">Cron Jobs/Background Jobs</h1>
 <hr />
 <p style="text-align: left;">If you want ti shedule a script in Linux, you may use crontab service either via crontab -e or shedule your script in daily, mounthly and etc in crontab file</p>
 <ul>
 <li style="text-align: left;">Via crontab -e</li>
 </ul>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; You may manually add job into crontab, for instance 23 59 * * * for exec job every day on 23:59, but you can create a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; little pipeline like this:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; You may manually add job into crontab, for instance 23 59 * * * for exec job every day on 23:59, but you can create a little pipeline like this:</p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; <strong>crontab -l &gt; new_script # for backup already existing scheduled jobs</strong></p>
 <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; echo "0 */12 * * * $k8s_dir/provisioning/get_evicted_pods.sh" &gt;&gt; new_script # schedule a new job</strong><br /><strong>&nbsp; &nbsp; &nbsp; &nbsp; crontab new_script # Add into system cron</strong><br /><strong>&nbsp; &nbsp; &nbsp; &nbsp; rm new_script # deleting unwanted backup</strong></p>
 <ul>
 <li>&nbsp;Via crontab files</li>
 </ul>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; sudo vi /etc/corn.daily/basckup for instance. Via this command you will create a backup named job, which will exec&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; every day</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; If you want troubleshoot some crontab error may use "<strong>grep CRON /var/log/syslog</strong>" for get a simple view about all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executed jobs</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; And for fin you able to run all daily/mounthly/... jobs via this command "<strong>sudo run-paths /etc/cron.daily/</strong>"</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; sudo vi /etc/corn.daily/basckup for instance. Via this command you will create a "backup" job, which will exec every day</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; If you want troubleshoot some crontab error may use "<strong>grep CRON /var/log/syslog</strong>" for get a simple view about all executed jobs</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; And for fin you able to run all dailys/mounthlys/... jobs via this command "<strong>sudo run-paths /etc/cron.daily/</strong>"</p>
