@@ -13,15 +13,15 @@
 <p>sudo lsof | grep filename and take&nbsp;<strong>pid</strong> from this output and grep "deleted" files</p>
 <p>Or you may check opened files via this command: <em><span style="text-decoration: underline;">ls -lia /proc/2031/fd/</span></em>, but you still need to know&nbsp;<strong>pid</strong></p>
 <p>&nbsp;</p>
-<h1 style="text-align: center;"><strong>RUNLEVELS</strong></h1>
+<h1 style="text-align: center;"><strong>RunLevels</strong></h1>
 <hr />
 <p style="text-align: left;">For simple view of runlevels i pick CentOS as a instance OS, because in Ubuntu Runlevels probably worse built then CentOS:&nbsp;</p>
 <table style="border-collapse: collapse; width: 100%; height: 144px;" border="1">
 <tbody>
 <tr style="height: 18px;">
-<td style="width: 33.3333%; text-align: center; height: 18px;">RunLevel</td>
-<td style="width: 33.3333%; text-align: center; height: 18px;">Mode</td>
-<td style="width: 33.3333%; text-align: center; height: 18px;">Action</td>
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>RunLevel</strong></td>
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>Mode</strong></td>
+<td style="width: 33.3333%; text-align: center; height: 18px;"><strong>Action</strong></td>
 </tr>
 <tr style="height: 18px;">
 <td style="width: 33.3333%; height: 18px; text-align: center;">0</td>
@@ -61,3 +61,18 @@
 </tbody>
 </table>
 <p>&nbsp;</p>
+<h1 style="text-align: center;">Cron Jobs/Background Jobs</h1>
+<hr />
+<p style="text-align: left;">If you want ti shedule a script in Linux, you may use crontab service either via crontab -e or shedule your script in daily, mounthly and etc in crontab file</p>
+<ul>
+<li style="text-align: left;">Via crontab -e</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; You may manually add job into crontab, for instance 23 59 * * * for exec job every day on 23:59, but you can create a&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; little pipeline like this:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; crontab -l &gt; new_script # for backup already existing scheduled jobs</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; echo "0 */12 * * * $k8s_dir/provisioning/get_evicted_pods.sh" &gt;&gt; new_script # schedule a new job<br />&nbsp; &nbsp; &nbsp; &nbsp; crontab new_script # Add into system cron<br />&nbsp; &nbsp; &nbsp; &nbsp; rm new_script # deleting unwanted backup</p>
+<ul>
+<li>&nbsp;Via crontab files</li>
+</ul>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; sudo vi /etc/corn.daily/basckup for instance. Via this command you will create a backup named job, which will exec&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; every day</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; If you want troubleshoot some crontab error may use "grep CRON /var/log/syslog" for get a simple view about all&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; executed jobs</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; And for fin you able to run all daily/mounthly/... jobs via this command "sudo run-paths /etc/cron.daily/"</p>
