@@ -12,3 +12,52 @@
 <p>Or if you want to get all files, which programm opened and still get opened</p>
 <p>sudo lsof | grep filename and take&nbsp;<strong>pid</strong> from this output and grep "deleted" files</p>
 <p>Or you may check opened files via this command: <em><span style="text-decoration: underline;">ls -lia /proc/2031/fd/</span></em>, but you still need to know&nbsp;<strong>pid</strong></p>
+<p>&nbsp;</p>
+<h1 style="text-align: center;"><strong>RUNLEVELS</strong></h1>
+<hr />
+<p style="text-align: left;">For simple view of runlevels i pick CentOS as a instance OS, because in Ubuntu Runlevels probably worse built then CentOS:&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 144px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; text-align: center; height: 18px;">RunLevel</td>
+<td style="width: 33.3333%; text-align: center; height: 18px;">Mode</td>
+<td style="width: 33.3333%; text-align: center; height: 18px;">Action</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px; text-align: center;">0</td>
+<td style="width: 33.3333%; height: 18px;">Shutdown</td>
+<td style="width: 33.3333%; height: 18px;">Shuts down system</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">1</td>
+<td style="width: 33.3333%; height: 18px;">Single-User Mode</td>
+<td style="width: 33.3333%; height: 18px;">Maintainance mode</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">2</td>
+<td style="width: 33.3333%; height: 18px;">Multi-User Mode</td>
+<td style="width: 33.3333%; height: 18px;">Not configure network interfaces</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">3</td>
+<td style="width: 33.3333%; height: 18px;">Multi-User Mode + network</td>
+<td style="width: 33.3333%; height: 18px;">Start system normally, without GUI</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">4</td>
+<td style="width: 33.3333%; height: 18px;">N/A</td>
+<td style="width: 33.3333%; height: 18px;">Not used</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">5</td>
+<td style="width: 33.3333%; height: 18px;">X11</td>
+<td style="width: 33.3333%; height: 18px;">As 3 runlevel + GUI</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 18px;">6</td>
+<td style="width: 33.3333%; height: 18px;">Reboot</td>
+<td style="width: 33.3333%; height: 18px;">Reboot</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
