@@ -8,3 +8,73 @@
 </ul>
 <p><img class="aligncenter wp-image-13506 size-full" src="https://serveradmin.ru/wp-content/uploads/2021/02/elasticsearch-logstash-kibana-elk-stack-00.png" sizes="(max-width: 1106px) 100vw, 1106px" srcset="https://serveradmin.ru/wp-content/uploads/2021/02/elasticsearch-logstash-kibana-elk-stack-00.png 1106w, https://serveradmin.ru/wp-content/uploads/2021/02/elasticsearch-logstash-kibana-elk-stack-00-300x77.png 300w, https://serveradmin.ru/wp-content/uploads/2021/02/elasticsearch-logstash-kibana-elk-stack-00-1024x262.png 1024w, https://serveradmin.ru/wp-content/uploads/2021/02/elasticsearch-logstash-kibana-elk-stack-00-768x197.png 768w" alt="Схема работы ELK STACK (Elasticsearch, Logstash, Kibana)" width="1106" height="283" data-wp-pid="13506" data-pin-nopin="nopin" /></p>
 <p>Also we can appoint nginx as a reverse proxy for Kibana, add SSL and authorisation</p>
+<p>&nbsp;</p>
+<p>Filebeat has Beats. Nowadays ELS has 4 types of beats:</p>
+<p>1. Packetbeat (gathers network traffic)</p>
+<p>2. Topbeat (gathers system logs)</p>
+<p>3. Filebeat (gathers from file)</p>
+<p>4. Metricbeat (gathers from systems and services)</p>
+<h4>MetricBeat:</h4>
+<p>Uses for gathering mertics from services and systems and can store metrics from CPU to RAM, from Redis to Nginx, you will be able to get information about CPU load, disk in/output and etc.</p>
+<p>Little configuration:</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">- module: system<br /><br />period: 3s<br /><br />metricsets:<br /><br />- cpu<br /><br />- load<br /><br />- memory<br /><br />- network<br /><br />- process<br /><br />- process_summary<br /><br />processors: [".*"]<br /><br />process.include_top_n:<br /><br />by_cpu: 5 # include top 5 processes by CPU<br /><br />by_memory: 5 # include top 5 processes by memory</td>
+</tr>
+</tbody>
+</table>
+<p>Where:&nbsp;</p>
+<ul>
+<li><strong>module</strong> - module, what you want to monitor</li>
+<li><strong>period</strong> - interval between each perfomation, if system unavailable error message will return each period</li>
+<li><strong>metricsets</strong> - which exactly metrics you want to gather</li>
+<li><strong>enabled -&nbsp;</strong>enable storing logs or no, has True value by default</li>
+<li><strong>process.include_top_n -&nbsp;</strong>includes info about "top" command execution</li>
+</ul>
+<h4>FileBeat:</h4>
+<p>Service for delivering logs from files, when you installed filebeat and started him - in first <strong>researcher</strong> starts for understand defined file in configuration, after, for each <strong>researcher</strong>, starts harvester, which gather new information from defined files and after this all <strong>spooler</strong> starts his work and send all stored logs into ELK stack&nbsp;</p>
+<p>Little configuration:</p>
+<p>In one cfg file we should to define inputs and outputs setting&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">filebeat.inputs:<br /><br />- type: log<br /><br /># Change to true to enable this input configuration.<br /><br />enabled: true<br /><br />paths:<br /><br />- /var/log/*.log<br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>output</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<p>output.elasticsearch:<br /><br /># Array of hosts to connect to.<br /><br />hosts: ["localhost:9200"]<br /><br /># Optional protocol and basic auth credentials.<br /><br />#protocol: "https"<br /><br />#username: "elastic"<br /><br />#password: "changeme"</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4><strong>TopBeat:</strong></h4>
+<p>Regulary gather logs of system information for example: Name of process, PID, Status and etc.</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<pre>input:
+  period: 10
+  procs: [<span class="pl-s"><span class="pl-pds">"</span>.*<span class="pl-pds">"</span></span>]<br />  stats:<br />     system: true<br />     proc: true<br />     filesystem: true</pre>
+<pre><span class="pl-ent">output</span>:
+  <span class="pl-c">### Elasticsearch as output</span>
+  <span class="pl-ent">elasticsearch</span>:
+    <span class="pl-c"># Array of hosts to connect to.</span>
+     <span class="pl-ent">hosts</span>: <span class="pl-s">["192.168.1.42:9200"]</span></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>period - </strong>period of collectiong log (each 10 sec - default)&nbsp;</li>
+<li><strong>stats -</strong>you may appoint more advansed setting for gather only either system or proc or fs statistics</li>
+</ul>
+<p>system - all about system, for instamce CPU load swap/memoru using</p>
+<p>proc - gather info about each process: name, PID, process using and memory</p>
+<p>filesystem - writes statistic of filesystem, such as general disk space, name of disk device and etc&nbsp;</p>
