@@ -1,0 +1,5 @@
+<h1 style="text-align: center;">Parse Yaml/JSON file and create loop with keys and values</h1>
+<hr />
+<p>input_file = open(f"{ks}", "rt")<br />texts = input_file.read()</p>
+<p>with open(f'{var_file}') as f:<br />&nbsp; &nbsp; &nbsp; docs = yaml.load_all(f, Loader=yaml.FullLoader)<br />&nbsp; &nbsp; &nbsp; for x in docs:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for k,v in x.items():<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; texts = texts.replace(f'${k}', f'{v}')</p>
+<p>input_file = open(f"{ks}", "wt")<br />input_file.write(texts)<br />input_file.close()</p>
