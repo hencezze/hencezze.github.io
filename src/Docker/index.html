@@ -51,4 +51,20 @@ PING www.yahoo.com (98.139.183.24): 56 data bytes
 </tbody>
 </table>
 <p>Also you can redefine and a ENTRYPOINT</p>
-<pre><strong><code>docker run --entrypoint [my_entrypoint] test<br /><br /></code></strong></pre>
+<pre><strong><code>docker run --entrypoint [my_entrypoint] test<br /><br /><br />Okey, lets to start conversation abou</code></strong><strong style="font-family: Verdana, Arial, Helvetica, sans-serif;"><code>r</code></strong><strong style="font-family: Verdana, Arial, Helvetica, sans-serif;"><code>t multiple CMD o ENTRYPOINT:</code></strong></pre>
+<ol>
+<li><strong><code>You can run two or more commands via this: CMD <span class="hljs-built_in">echo</span> FIRST COMMAND;<span class="hljs-built_in">echo</span> SECOND COMMAND&nbsp;</code></strong><code>or if you want exec execution - CMD [<span class="hljs-string">"/bin/bash"</span>, <span class="hljs-string">"-c"</span>, <span class="hljs-string">"echo FIRST COMMAND;echo SECOND COMMAND"</span>]. Also you can redefine this commands on docker run stage</code></li>
+<li><code></code><code>Create bash script - copy him and execute</code></li>
+</ol>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<p>FROM ubuntu:latest</p>
+<p>COPY startup.sh .</p>
+<p>CMD [<span class="hljs-string">"/bin/bash"</span>,<span class="hljs-string">"-c"</span>,<span class="hljs-string">"./startup.sh"</span>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code></code></p>
