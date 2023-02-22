@@ -1,0 +1,54 @@
+<h1 class="single-title entry-title" style="text-align: center;">Run Multiple Commands in Docker</h1>
+<hr />
+<p class="single-title entry-title" style="text-align: left;">Docker has 2 command, which may be added into docker image such as&nbsp;<strong>CMD&nbsp;</strong>and&nbsp;<strong>ENTRYPOINT</strong> and while we creating docker image, we should to define one of this.</p>
+<ul>
+<li><strong>CMD and ENTRYPOIND have 2 types of executing: shell and [exec] form</strong></li>
+</ul>
+<p>If we are working with&nbsp;<strong>SHELL</strong> type - this command, which we defined in CMD or ENTRYPOIND will exec in <strong>/bin/sh -c</strong> shell&nbsp;</p>
+<p>Also we can add <strong>square brackets</strong>, which switch our execution type to <strong>exec</strong> form.</p>
+<p>But this two executing types have one big difference:&nbsp;<strong>shell type doesn't redirect signals from /bin/sh -c to other subprocesses, but [exec] form does it, </strong>you can check this difference by CTRL+C send, when command will perform</p>
+<p>If you want to unit CMD and ENTRYPOINT in one command you should <strong>use only&nbsp;[exec] form,&nbsp;</strong>because if you define CMD and ENTRYPOINT in shell mode - only ENTRYPOINT will be executed.</p>
+<p>A little spreadsheet of this:&nbsp;</p>
+<p><img src="https://habrastorage.org/r/w1560/web/ca2/564/592/ca25645927e9445c9a70475de1be7afc.png" alt="Entrypointscreen" data-src="https://habrastorage.org/web/ca2/564/592/ca25645927e9445c9a70475de1be7afc.png" /></p>
+<p>If you use CMD and ENTRYPOINT in <strong>[exec] mode</strong> - CMD parameters will be attached into end of ENCTRYPOINT command:</p>
+<p>For instance:</p>
+<table style="border-collapse: collapse; width: 98.541%; height: 228px;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<pre><code>FROM alpine  
+ENTRYPOINT ["ls", "/usr"]  
+CMD ["/var"]  <br /></code></pre>
+<pre><code>$ docker run test
+/usr:
+bin  
+
+/var:
+cache  </code><code></code></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p>You can combine CMD and ENTRYPOINT in two cases:</p>
+<p>When you defined CMD and ENTRYPOINT in docker image, if you will want to always redefine CMD you can add into end docker run CLI command something like this:</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<pre><code>$ cat Dockerfile
+FROM alpine  
+ENTRYPOINT ["ping"]  
+CMD ["www.google.com"]  </code></pre>
+<pre><code>$ docker build -t test .</code></pre>
+<pre><code>$ docker run test
+PING www.google.com (172.217.7.164): 56 data bytes  
+64 bytes from 172.217.7.164: seq=0 ttl=37 time=0.306 ms</code></pre>
+<pre><code>$ docker run test www.yahoo.com
+PING www.yahoo.com (98.139.183.24): 56 data bytes  
+64 bytes from 98.139.183.24: seq=0 ttl=37 time=0.590 ms  </code></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Also you can redefine and a ENTRYPOINT</p>
+<pre><strong><code>docker run --entrypoint [my_entrypoint] test<br /><br /></code></strong></pre>
