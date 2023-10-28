@@ -1,19 +1,877 @@
-<h1 style="color: #5e9ca0; text-align: center;">My little knowledge base, which bringing up with me</h1>
-<p style="text-align: center;">&nbsp;</p>
-<h4 style="text-align: center;"><a href="./src/AWS/index.html">AWS</a></h4>
-<h4 style="text-align: center;"><a href="./src/Linux/index.html">Linux&nbsp;</a></h4>
-<h4 style="text-align: center;"><a href="./src/Docker/index.html">Docker</a></h4>
-<h4 style="text-align: center;"><a href="./src/Ansible/index.html">Ansible</a></h4>
-<h4 style="text-align: center;"><a href="./src/Jenkins/index.html">Jenkins</a></h4>
-<h4 style="text-align: center;"><a href="./src/Terraform/index.html">Terraform</a></h4>
-<h4 style="text-align: center;"><a href="./src/k8s/index.html">k8s</a></h4>
-<h4 style="text-align: center;"><a href="./src/Python/index.html">Python</a></h4>
-<h4 style="text-align: center;"><a href="./src/Nix/index.html">Nix</a></h4>
-<h4 style="text-align: center;"><a href="./src/Bash/index.html">Bash</a></h4>
-<h4 style="text-align: center;"><a href="./src/NGINX/index.html">NGINX</a></h4>
-<h4 style="text-align: center;"><a href="./src/Grafana+Prometheus/index.html">Grafana + Prometheus</a></h4>
-<h4 style="text-align: center;"><a href="./src/ELK/index.html">ELK</a></h4>
-<p style="text-align: center;">&nbsp;</p>
-<p style="padding-left: 640px; text-align: center;">Mems</p>
-<h4 style="text-align: center;"><a href="answers.html">300+ DevOps answers</a></h4>
-<h4 style="text-align: center;">Yeah, I will add css, but a little later (this promise writed 01.02.2023)</h4>
+<!DOCTYPE html><html lang="en"><head>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Q6GS7DYJ0T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q6GS7DYJ0T');
+</script>
+
+    <meta charset="UTF-8">
+    <title>Программирование для всех!</title>
+	<meta name="robots" content="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Обслуживание компьютеров, серверов, ip телефонии, Минске, районе, IT-услуги, IT-аутсорсинг, ИТ-аутсорсинг, программы, софт, ПО, налоги, фонд, фсзн, статистика, клиент банк, admin, admin admin, admin-admin, помощь, компьютеры, серверы, Минск, мастерская, сервис, ремонт, настройка, установка, переустановка, виндовс, windows, оптимизация, замена, чистка, ПК, ноутбуков, компьютеров, нетбуков, выезд, акция, клавиатура, матрица, блок питания, недорого, дешево, оперативно, качественно, быстро, профессионально">
+	<meta name="description" content="Обслуживание компьютеров, серверов, ip телефонии в Минске и районе с гарантией качества. Оказание IT услуг для юр.лиц. IP-телефония. Комплексный аутсорсинг IT компании. Звоните ☎+375 29 3215565.">
+	
+    <link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon">
+    <link rel="icon" href="assets/img/fv.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/newfont.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="assets/css/jquery.bxslider.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/side-demo.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(90447482, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/90447482" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+</head>
+
+<body class="app-eight-home">
+    <!-- preloader - start -->
+    <div id="preloader" class="ei-preloader"></div>
+    <div class="ei-up">
+        <a href="#" id="scrollup" class="ei-scrollup text-center"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <!-- Start of header section
+        ============================================= -->
+        <header id="header-eight" class="main-header-eight">
+            <div class="appheader-content">
+                <div class="site-logo float-left">
+                    <a href="https://vrCQv0M15MXL.by"><img src="assets/img/app-landing/logo/logo1.png" alt=""></a>
+                </div>
+                <nav class="navigation-eight ul-li">
+				
+                    <ul>
+						<li class="dropdown">
+                            <a href="index.php#usl">Пути обучения</a>
+                            <ul class="dropdown-menu clearfix">
+                                <li><a href="razov.php">DevOps</a></li>
+                                <li><a href="abonent.php">FrontEnd</a></li>
+                                <li><a href="iptel.php">Backend</a></li>
+								<li><a href="iptel.php">Языки программирования</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.php#nach">Как начать</a></li>
+                        <li><a href="index.php#faq">Вопросы</a></li>
+                        <li><a href="index.php#contact">Контакты</a></li>
+                        
+                    </ul>
+					
+                </nav>
+				<!--
+                <div class="h-eight-social ul-li float-right clearfix">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <div class="sign-up-btn-eight text-center float-right clearfix">
+                    <a href="#">sign In</a>
+                </div>
+				-->
+
+            <!-- /desktop-menu -->
+            <div class="appi-ei-mobile_menu relative-position">
+                <div class="appi-ei-mobile_menu_button appi-ei-open_mobile_menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="appi-ei-mobile_menu_wrap">
+                    <div class="mobile_menu_overlay appi-ei-open_mobile_menu"></div>
+                    <div class="appi-ei-mobile_menu_content">
+                        <div class="appi-ei-mobile_menu_close appi-ei-open_mobile_menu">
+                            <i class="far fa-times-circle"></i>
+                        </div>
+                        <div class="m-brand-logo text-center">
+                            <img src="assets/img/app-landing/logo/f-logo.png" alt="">
+                        </div>
+						
+                        <nav class="appi-ei-mobile-main-navigation  clearfix ul-li">
+                            <ul id="main-nav" class="navbar-nav text-capitalize clearfix">
+                                <li class="dropdown">
+                            <a href="index.php#usl">Услуги</a>
+                            <ul class="dropdown-menu clearfix">
+                                <li><a href="razov.php">Разовые работы</a></li>
+                                <li><a href="abonent.php">Абонентское обслуживание</a></li>
+                                <li><a href="iptel.php">IP-телефония</a></li>
+                                <li><a target="_blank" href="http://champion-system.by/">1С</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.php#nach">Как начать</a></li>
+                        <li><a href="index.php#faq">Вопросы</a></li>
+                        <li><a href="index.php#contact">Контакты</a></li>
+                        <li><small>Общие вопросы:</small><a target="_blank" href="tel:+375296475565">+37529 647 5565 </a><a target="_blank" href="https://t.me/admadmby"><img src="assets/img/telegram16.png" alt="telegram"> telegram</a></li>
+                        <li><small>Тех. поддержка:</small><a target="_blank" href="tel:+375293215565">+37529 321 5565 </a><a target="_blank" href="https://t.me/sysadmin_minsk"><img src="assets/img/telegram16.png" alt="telegram"> telegram</a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/admadm.by/"><img src="assets/img/inst16.png" alt="instagram">&nbsp;&nbsp;admadm.by</a></li>
+								
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- /mobile-menu -->
+        </div></header>
+    <!-- End of header section
+        ============================================= -->
+
+
+    <!-- Start of Banner section
+        ============================================= -->
+        <section id="eight-banner" class="eight-banner-section position-relative">
+            <div id="main1" class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="eight-banner-content">
+                            <div class="banner-content-box appeight-headline pera-content">
+                                <h1 class="cd-headline clip is-full-width">
+                                    <span class="cd-words-wrapper">
+                                        <b class="is-visible">Хотите стать программистом</b>
+                                        <b>Выучить языки программирования</b>
+										<b>программами</b>
+										<b>удаленкой</b>
+                                        <b>IP-телефонией</b>
+										<b>сетью</b>
+										<b>принтерами</b>
+										<b>безопасностью</b>
+                                    </span>?
+                                </h1>
+                                <p>Мы можем помочь с решением Ваших задач. </p>
+								<br>
+								<p>Общие вопросы:</p>
+								<div class="txtwhite txts" style="font-size:28pt;">
+                                    <a href="tel:+375296475565">+375 29 647 55 65</a> <a target="_blank" href="https://t.me/admadmby"><img src="assets/img/telegram.png" alt="telegram"></a>
+                                </div>
+								<p>Техническая поддержка:</p>
+								<div class="txtwhite txts" style="font-size:28pt;">
+                                    <a href="tel:+375293215565">+375 29 321 55 65</a> <a target="_blank" href="https://t.me/sysadmin_minsk"><img src="assets/img/telegram.png" alt="telegram"></a>
+                                </div>
+								
+								<br>
+								<p>Для быстрого доступа предлагаем скачать:</p>
+                                <div class="txtwhite ei-banner-btn">
+                                    <a href="https://vrCQv0M15MXL.by/TeamViewerQS.exe">TeamViewer</a>
+                                    <a href="https://vrCQv0M15MXL.by/AnyDesk.exe">AnyDesk</a>
+                                    <a href="https://vrCQv0M15MXL.by/AeroAdmin.exe">AeroAdmin</a>
+                                </div>
+                               
+                            </div>
+                            <div class="ei-banner-mbl-mockup wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <img src="assets/img/app-landing/mockup/bm1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="waveWrapper waveAnimation">
+                <div class="waveWrapperInner bgTop">
+                    <div class="wave waveTop" style="background-image: url('assets/img/app-landing/shape/b-shapeup.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgMiddle">
+                    <div class="wave waveMiddle" style="background-image: url('assets/img/app-landing/shape/b-shapemiddle.png')"></div>
+                </div>
+                <div class="waveWrapperInner bgBottom">
+                    <div class="wave waveBottom" style="background-image: url('assets/img/app-landing/shape/b-shapemiddle.png')"></div>
+                </div>
+            </div>
+        </section>
+    <!-- End of Banner section
+        ============================================= --> 
+
+
+
+    <!-- Start of Featured  section
+        ============================================= -->
+        <section id="feature-eight" class="feature-eight-section position-relative">
+            <div id="usl" class="container">
+                <div class="eight-section-title appeight-headline pera-content text-center">
+                    <span class="eg-title-tag">
+                        Наши услуги <i class="square-shape"><i></i><i></i> <i></i> <i></i> </i>
+                    </span>
+                    <h2>Услуги
+                        <span>, которые мы можем Вам предложить</span></h2>
+                        <p>Наши специалисты обладают многолетним опытом по данным направлениям.</p>
+                    </div>
+                    <!-- /title -->
+
+                    <div class="eight-feature-content">
+                        <div class="row justify-content-md-center">
+                            <div class="col-lg-3 col-md-6  wow fadeFromUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="eight-feature-box text-center position-relative">
+                                    <div class="feature-icon8 position-relative">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAA6CAYAAADhu0ooAAAABmJLR0QA/wD/AP+gvaeTAAAFK0lEQVRoge2a228UVRzHv+ecuZ257S5tF3qRy/aC5SpgDAlE4x9gDA+NLzyRGKN4j1YfiFZ9wfrghYDwIonxiahvPPggRAOJiJSqIRQol1C6QEtburvd7s5lxwfsCm2lszvbC9v9JJPMnJnfzPc7M2d+v/wyQIUKFRYyZL4F/B8dHR5N1PxazwiJUUFs4ZK4KW07xzpf3Pp9MecTSi2wEN757CfNVYwYI15MlIW1EmMbPeo1MUINInTzOjVKTVNVjJAadmyHXrzQZwNYuEbb952o8xgaPUqaBMJa9760tX3P4VNfybL0QiSiQzdVQ9M51zQFqiqDUjrlHMNDyUAaSmK048g5KTEwvJIRxChjqyWZbYBHWgmlYSZQzlUZhqlKpqlWXzrflwTQLlAhvGlLS9QMqaWQMCOBjHYc+kO1mHtedG1h+YqlzAipmqFzXdUUaLoCxqY+mSu98WyQaxZLIKNpIcMihilse3p9XakEzRZTb3mZUjFablSMlhuLxmjggsHKOjzef8f/8bbLJ9YHB0aQSqV9xaWS44WLu49ARu86SoYg++Hf3ZeZ3xjH9VwAGM9mD/ZevNFVyPVc1z1ZqMYJAhmtu7nFHY2eOGoVEUstdiFNrVuFxMjASBGXAhC0MnrspMY9qasmGrb9xgwMDEsAQoJGO2tDkR2iILp+4izbEkZH0ocBvF2M1sBz1DD52JanWnyXgL8c644DAKNUXLN2VcRvUT88lMSZ0z2+p8hkFs1Xt2K03KgYLTcWjdHA6SWZGOcXe64ndEM1NU2BpnEIYtFZYNYIZLRz17bU+wd/29xz/kaMEtoiKWwDAWklhNQwxriiiIJhqKJhqhHd4IqqKYA3P73kYE+UEG8vcA33lmOTd7/5+fHwHZHFcoTFVC5uJIyud22nFgByXs7puz4wXlVt3mtzatM300rFrPZ1v3jr2bsAuv5dHmg8Z5LZPZcvxX+4dvnWakFi6yjwOGE0zBjlnMtEN7hkhrVqXVNEVVMCa5m3Tn3na9vjAOIAjk7e9+7+48sGB1gjGGvmsvwECNZ4nrfc9bz43CutUKHCXDApp3nk9Y8OvUopdgLEmB9JgUm4lvPdvk9e2Q8Qb2LwAaNvfHzg64a6+p2x2EqdsYVX3fjBdV30XrmaisdvfvvlBy/vnhjPZ+i2tiNMEMTnmpsbH1mTAMAYw+rmJl1g7Pm2tiN5I3mjkeb+KOe8bIp8rqo00twfndjOG3Mcgfz3Rj/6EO+ep4ntsnmCM1FQCZi2U/hr+Hdk3TQIIajly9EUXgeycH9uyePb6LgzhlMDPyPWUAVF1uHBw+2h2zg7OIrNNdunjenru4FMtpj2dmHU1S6FpmkPPca30XMjXVjZsASKLAEACAiWVZnoHRtEykpAl8wpMdf7+jGaSBQou3BCIWNGo77naNpOQpXlKeOmLuNudqhwdXOMb6MCFeG6uSnjlu2CCw+/mwsB369uzGzF1Vt/YlV9df7jk7FspMZsLDGrp43hXIHjOKVR+hD8FDi+jS5TGzBmJ9Fz5RIMTYbjeMhmcngy+gwImf7F2Lxpo3+1s0xB6aUx1IoVRhNGsyOQuAJjiQGQhZ9agCJaKQIVUcWjMx+4wFg0lVHeqKLShO3YZVPt2q6TU1SaT+J5owc6dqfGM5n+ZDI1P8pKSDKZQjqT6T/QsTtv5oE5ms2O7zh9tvtHVVHqJUmae4UlwLIspDOZ/lTS3nH/+LSfzF3tnxoylWrmRlppyeaswW863wv2F3OFR4B/AFyXgViCzQJvAAAAAElFTkSuQmCC">
+                                        <span class="ei-icon-bg"></span>
+                                    </div>
+                                    <div class="feature-text8 appeight-headline pera-content">
+                                        <h3>Сисадмин на час</h3>
+                                        <p>Мы предлагаем разовые услуги в сфере системного администрирования. </p>
+                                    </div>
+                                    <div class="ei-feature-more">
+                                        <a href="razov.php">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeFromUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="eight-feature-box text-center position-relative">
+                                    <div class="feature-icon8 position-relative">
+                                        <img src="data:image/png;base64,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">
+                                        <span class="ei-icon-bg"></span>
+                                    </div>
+                                    <div class="feature-text8 appeight-headline pera-content">
+                                        <h3>Абонентское обслуживание</h3>
+                                        <p>Мы предлагаем услуги абонентского обслуживания компьютерной техники и серверов. </p>
+                                    </div>
+                                    <div class="ei-feature-more">
+                                        <a href="abonent.php">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeFromUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+                                <div class="eight-feature-box text-center position-relative">
+                                    <div class="feature-icon8 position-relative">
+									<img src="data:image/png;base64,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">
+									<span class="ei-icon-bg"></span>
+                                    </div>
+                                    <div class="feature-text8 appeight-headline pera-content">
+                                        <h3>IP-телефония</h3>
+                                        <p>Мы предлагаем настройку АТС и ip-телефонов с дальнейшим обслуживанием и поддержкой. </p>
+                                    </div>
+                                    <div class="ei-feature-more">
+                                        <a href="iptel.php">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 wow fadeFromUp" data-wow-delay="1200ms" data-wow-duration="1500ms">
+                                <div class="eight-feature-box text-center position-relative">
+                                    <div class="feature-icon8 position-relative">
+                                        <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNjAiIGhlaWdodD0iNjAiCnZpZXdCb3g9IjAgMCA4MCA4MCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBmaWxsPSIjZjc4ZjhmIiBkPSJNNi41IDYxLjVMNi41IDMxLjUgMC41IDMxLjUgMC41IDI2LjUgMTEuNSAyNi41IDExLjUgNjEuNXoiPjwvcGF0aD48cGF0aCBmaWxsPSIjYzc0MzQzIiBkPSJNMTEsMjd2MzRIN1YzMnYtMUg2SDF2LTRIMTEgTTEyLDI2SDB2Nmg2djMwaDZWMjZMMTIsMjZ6Ij48L3BhdGg+PHBhdGggZmlsbD0iI2Y3OGY4ZiIgZD0iTTE0LjUgNjEuNUwxNC41IDIzLjUgNi41IDIzLjUgNi41IDE4LjUgMTkuNSAxOC41IDE5LjUgNjEuNXoiPjwvcGF0aD48cGF0aCBmaWxsPSIjYzc0MzQzIiBkPSJNMTksMTl2NDJoLTRWMjR2LTFoLTFIN3YtNEgxOSBNMjAsMThINnY2aDh2MzhoNlYxOEwyMCwxOHoiPjwvcGF0aD48Zz48cGF0aCBmaWxsPSIjZjc4ZjhmIiBkPSJNNDYsNjEuNWMtMTEuODU1LDAtMjEuNS05LjY0NS0yMS41LTIxLjVTMzQuMTQ1LDE4LjUsNDYsMTguNWMxMS42ODgsMCwyMS4yMjgsOS4zNzUsMjEuNDk0LDIxIGgtNS4wMDFjLTAuMjY1LTguODY4LTcuNTYyLTE2LTE2LjQ5My0xNmMtOS4wOTgsMC0xNi41LDcuNDAyLTE2LjUsMTYuNVMzNi45MDIsNTYuNSw0Niw1Ni41aDMzLjV2NUg0NnoiPjwvcGF0aD48cGF0aCBmaWxsPSIjYzc0MzQzIiBkPSJNNDYsMTljMTEuMjQ0LDAsMjAuNDUzLDguODgzLDIwLjk3NywyMGgtNC4wMDZDNjIuNDUxLDMwLjA5LDU1LjAzOCwyMyw0NiwyMyBjLTkuMzc0LDAtMTcsNy42MjYtMTcsMTdzNy42MjYsMTcsMTcsMTdoMzN2NEg0NmMtMTEuNTc5LDAtMjEtOS40MjEtMjEtMjFTMzQuNDIxLDE5LDQ2LDE5IE00NiwxOGMtMTIuMTMxLDAtMjIsOS44NjktMjIsMjIgczkuODY5LDIyLDIyLDIyaDM0di02SDQ2Yy04LjgyMiwwLTE2LTcuMTc4LTE2LTE2czcuMTc4LTE2LDE2LTE2czE2LDcuMTc4LDE2LDE2aDZDNjgsMjcuODY5LDU4LjEzMSwxOCw0NiwxOEw0NiwxOHoiPjwvcGF0aD48L2c+PGc+PHBhdGggZmlsbD0iI2Y3OGY4ZiIgZD0iTTQ2LDUxLjVjLTYuMzQxLDAtMTEuNS01LjE1OS0xMS41LTExLjVTMzkuNjU5LDI4LjUsNDYsMjguNWM2LjE3MywwLDExLjIyNyw0Ljg5LDExLjQ4OSwxMWgtNS4wMDggYy0wLjI1Ni0zLjM1Mi0zLjA2NS02LTYuNDgxLTZjLTMuNTg0LDAtNi41LDIuOTE2LTYuNSw2LjVzMi45MTYsNi41LDYuNSw2LjVoMzMuNXY1SDQ2eiI+PC9wYXRoPjxwYXRoIGZpbGw9IiNjNzQzNDMiIGQ9Ik00NiwyOWM1LjcyOSwwLDEwLjQ0OCw0LjQwMSwxMC45NTUsMTBoLTQuMDI2Yy0wLjQ4Ny0zLjM4OC0zLjQwOC02LTYuOTI5LTZjLTMuODYsMC03LDMuMTQtNyw3IHMzLjE0LDcsNyw3aDMzdjRINDZjLTYuMDY1LDAtMTEtNC45MzUtMTEtMTFTMzkuOTM1LDI5LDQ2LDI5IE00NiwyOGMtNi42MTcsMC0xMiw1LjM4My0xMiwxMnM1LjM4MywxMiwxMiwxMmgzNHYtNkg0NiBjLTMuMzA5LDAtNi0yLjY5MS02LTZzMi42OTEtNiw2LTZzNiwyLjY5MSw2LDZoNkM1OCwzMy4zODMsNTIuNjE3LDI4LDQ2LDI4TDQ2LDI4eiI+PC9wYXRoPjwvZz48L3N2Zz4=">
+                                        <span class="ei-icon-bg"></span>
+                                    </div>
+                                    <div class="feature-text8 appeight-headline pera-content">
+                                        <h3>Уникальная разработка 1С</h3>
+                                        <p>Мы предлагаем уникальное решение на платформе 1С для белорусских предприятий оптовой и розничной торговли. </p>
+                                    </div>
+                                    <div class="ei-feature-more">
+                                        <a href="https://msales.by/" target="_blank">подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ei-feature-shape"><img src="assets/img/app-landing/shape/f-shape1.png" alt=""></div>
+            </section>
+    <!-- End of Featured section
+        ============================================= --> 
+
+    <!-- Start of service  section
+        ============================================= -->
+		<!--
+        <section id="eight-service" class="eight-service-section position-relative">
+            <div class="container">
+                <div class="eight-service-slide   clearfix wow fadeFromLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="ei-service-slide-btn ul-li-block clearfix">
+                        <div class="banner-pager clearfix" id="banner-pager">
+                            <a class="pager" data-slide-index="0">
+                                <div class="ei-service-icon-text text-right appeight-headline pera-content">
+                                    <div class="ei-service-icon float-right text-center">
+                                        <i class="flaticon-bug"></i>
+                                    </div>
+                                    <div class="ei-service-text">
+                                        <h3>Bug free</h3>
+                                        <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="pager" data-slide-index="1">
+                                <div class="ei-service-icon-text text-right appeight-headline pera-content">
+                                    <div class="ei-service-icon float-right text-center">
+                                        <i class="flaticon-crop"></i>
+                                    </div>
+                                    <div class="ei-service-text">
+                                        <h3>Well Organized</h3>
+                                        <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a class="pager" data-slide-index="2">
+                                <div class="ei-service-icon-text text-right appeight-headline pera-content">
+                                    <div class="ei-service-icon float-right text-center">
+                                        <i class="flaticon-web-development"></i>
+                                    </div>
+                                    <div class="ei-service-text">
+                                        <h3>Clean coding</h3>
+                                        <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="eight-service-text position-relative appeight-headline wow fadeFromRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="ei-service-slide-mbl" data-background="assets/img/app-landing/mockup/smu1.png">
+                        <div class="slide-inner">
+                            <div class="ei-service-slide">
+                                <div class="slide-item">
+                                    <div class="image">
+                                        <img src="assets/img/app-landing/screenshoot/slider-01.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-item">
+                                    <div class="image">
+                                        <img src="assets/img/app-landing/screenshoot/slider-01.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-item">
+                                    <div class="image">
+                                        <img src="assets/img/app-landing/screenshoot/slider-01.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-item">
+                                    <div class="image">
+                                        <img src="assets/img/app-landing/screenshoot/slider-01.jpg" alt="" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="color: white;">80% работы мы выполняем удаленно. Для этого мы используем </h3>
+                </div>
+            </div>
+            <div class="s-shape-bg1" data-parallax='{"x" : -70}'><img src="assets/img/app-landing/shape/s-shape3.png" alt=""></div>
+            <div class="s-shape-bg2 text-center"><img src="assets/img/app-landing/shape/s-shape4.png" alt=""></div>
+        </section>
+		-->
+    <!-- End of service  section
+        ============================================= -->
+
+
+    <!-- Start of Fun fact   section
+        ============================================= -->
+		<!--
+        <section id="fun-fact" class="eg-fun-fact-section position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="eg-funfact-content clearfix position-relative">
+                            <div class="eg-fun-fact-mockup wow fadeFromLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="main-mockup">
+                                    <img src="assets/img/app-landing/mockup/fmu1.png" alt="">
+                                </div>
+                                <div class="fn-shape fn-shape-item1" data-parallax='{"y" : 50}'><img src="assets/img/app-landing/mockup/fmu2.png" alt=""></div>
+                                <div class="fn-shape fn-shape-item2" data-parallax='{"y" : 60}'><img src="assets/img/app-landing/mockup/fmu3.png" alt=""></div>
+                                <div class="fn-shape fn-shape-item3" data-parallax='{"x" : -50}'><img src="assets/img/app-landing/shape/fc1.png" alt=""></div>
+                                <div class="fn-shape fn-shape-item4" data-parallax='{"x" : -40}'><img src="assets/img/app-landing/shape/fc2.png" alt=""></div>
+                            </div>
+                            <div class="eg-funfact-text float-right wow fadeFromRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="eight-section-title appeight-headline pera-content text-left">
+                                    <span class="eg-title-tag"> Fun facts
+                                        <i class="square-shape"><i></i><i></i><i></i><i></i></i></span>
+                                        <h2>We have some awesome
+                                            <span>funfacts for clients.</span></h2>
+                                            <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                                        </div>
+										
+                                        <div class="fun-fact-counter position-relative clearfix">
+                                            <div class="eg-counter-number pera-content text-center">
+                                                <span class="odometer" data-count="20">00</span><strong>+</strong>
+                                                <p>Awesome
+                                                Integratios</p>
+                                            </div>
+                                            <div class="eg-counter-number pera-content text-center">
+                                                <span class="odometer" data-count="2000">00</span><strong>+</strong>
+                                                <p>Active
+                                                users</p>
+                                            </div>
+                                            <div class="eg-counter-number pera-content text-center">
+                                                <span class="odometer" data-count="5000">00</span><strong>+</strong>
+                                                <p>Downloads
+                                                done</p>
+                                            </div>
+                                            <div class="eg-counter-number pera-content text-center">
+                                                <span class="odometer" data-count="2500">00</span><strong>+</strong>
+                                                <p>5 stars
+                                                ratings</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fn-bg-shape position-absolute"><img src="assets/img/app-landing/shape/fns1.png" alt=""></div>
+                </section>
+				-->
+    <!-- End of Fun fact  section
+        ============================================= --> 
+
+    <!-- Start of How work  section
+        ============================================= -->
+        <section id="eg-how-work" class="eg-how-work-section position-relative">
+            <div class="how-work-bg-shape position-absolute"><img src="assets/img/app-landing/shape/hws.png" alt=""></div>
+            <div id="nach" class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="ei-how-work-content-item wow fadeFromUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="eight-section-title appeight-headline pera-content text-left">
+                                <span class="eg-title-tag">
+                                    Начать с нами новый поть очень легко!<i class="square-shape"><i></i><i></i><i></i><i></i></i>
+                                </span>
+                                <h2>Мы расскажем Вам, как это сделать
+                                    <span>в несколько шагов!</span>
+                                </h2>
+                            </div>
+                            <!-- /title -->
+                            <div id="how-workscrollbar" class="how-work-scroller">
+                                <div class="eg-how-work-content">
+                                    <div class="eg-how-work-icon-text position-relative">
+                                        <span class="scroller-no">1</span>
+                                        <div class="eg-how-work-text appeight-headline pera-content">
+                                            <h3>Свяжитесь с нами</h3>
+                                            <p>Связаться с нами любым удобным для вас способом.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eg-how-work-icon-text position-relative">
+                                        <span class="scroller-no">2</span>
+                                        <div class="eg-how-work-text appeight-headline pera-content">
+                                            <h3>Договориться о первом занятии</h3>
+                                            <p>Первое занятие имеет неизменяемую цену, так еще и имеет скидку 25%.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eg-how-work-icon-text position-relative">
+                                        <span class="scroller-no">3</span>
+                                        <div class="eg-how-work-text appeight-headline pera-content">
+                                            <h3>Обсудить детали</h3>
+                                            <p>Согласовать условия и стоимость. Мы подберем для Вас самый оптимальный, подходящий именно Вам вариант работ.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eg-how-work-icon-text position-relative">
+                                        <span class="scroller-no">4</span>
+                                        <div class="eg-how-work-text appeight-headline pera-content">
+                                            <h3>Заключить договор</h3>
+                                            <p>Достигнутые нами соглашения мы закрепляем в виде договора.</p>
+                                        </div>
+                                    </div>
+                                    <div class="eg-how-work-icon-text position-relative">
+                                        <span class="scroller-no">5</span>
+                                        <div class="eg-how-work-text appeight-headline pera-content">
+                                            <h3>Начать работать</h3>
+                                            <p>Наши специалисты приступают к выполнению оговоренных работ.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="how-work-mockup position-relative wow fadeFromUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="hw-mockup-img">
+                                <img src="assets/img/app-landing/mockup/wing.png" alt="">
+                            </div>
+                            <div class="hw-shape1 position-absolute" data-parallax="{&quot;x&quot; : 40}"><img src="assets/img/app-landing/shape/fc1.png" alt=""></div>
+                            <div class="hw-shape2 position-absolute" data-parallax="{&quot;x&quot; : -30}"><img src="assets/img/app-landing/shape/fc2.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- End  of How work  section
+        ============================================= -->   
+
+
+    <!-- Start of App Download  section
+        ============================================= -->
+		<!--
+        <section id="ei-appdownload" class="ei-appdownload-section position-relative" data-background="assets/img/app-landing/background/appbg1.png">
+            <div class="container">
+                <div class="ei-appdownload-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="ei-app-mockup-img  wow fadeFromRight" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <img src="assets/img/app-landing/mockup/amu1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="ei-app-down-text wow fadeFromLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <div class="eight-section-title appeight-headline pera-content text-left">
+                                    <span class="eg-title-tag">
+                                        App Download<i class="square-shape"><i></i><i></i><i></i><i></i></i>
+                                    </span>
+                                    <h2>This app is available for
+                                        <span>your smart phone.</span>
+                                    </h2>
+                                    <p>As a SAAS web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                                </div>
+								
+                                <div class="app-down-btn">
+                                    <a href="#"><img src="assets/img/app-landing/shape/btn1.png" alt=""></a>
+                                    <a href="#"><img src="assets/img/app-landing/shape/btn2.png" alt=""></a>
+                                </div>
+                                <div class="ei-download-btn pera-content">
+                                    <div class="download-icon float-left"><i class="flaticon-idea"></i></div>
+                                    <p>Are you interested for this app?</p>
+                                    <a href="#">Learn More </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ei-appdownloaad-shape app-shape1" data-parallax='{"y" : -100}'><img src="assets/img/app-landing/background/apps1.png" alt=""></div>
+            <div class="ei-appdownloaad-shape app-shape2" data-parallax='{"x" : -120}'><img src="assets/img/app-landing/background/apps2.png" alt=""></div>
+            <div class="ei-appdownloaad-shape app-shape3" data-parallax='{"y" : -100}'><img src="assets/img/app-landing/background/apps3.png" alt=""></div>
+        </section>
+		-->
+    <!-- End of App Download section
+        ============================================= -->                                          
+
+    <!-- Start of Faq section
+        ============================================= -->
+        <section id="ei-faq" class="ei-faq-section position-relative">
+            <div id="faq" class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ei-faq-content">
+                            <div class="ei-title-faq pera-content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="eight-section-title appeight-headline pera-content text-left">
+                                            <span class="eg-title-tag">
+                                                Часто задаваемые вопросы<i class="square-shape"><i></i><i></i> <i></i><i></i></i>
+                                            </span>
+                                            <h2>Узнайте сразу
+                                                <span>ответы на интересующие Вас вопросы!</span></h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Делимся часто задаваемыми вопросами и ответами на них.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /title -->
+                                <div class="ei-faq-queans">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="ei-faq faq_bg">
+                                            <div class="ei-faq-header" id="headingOne">
+                                                <button class="" data-toggle="collapse" data-target="#collapseOne" aria-controls="collapseOne">
+                                                    Работаете ли Вы с физическими лицами?
+                                                </button>
+                                            </div>
+                                            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                                <div class="ei-faq-body">
+                                                    К сожалению, наша компания работает исключительно с юридическими лицами.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ei-faq">
+                                            <div class="ei-faq-header" id="headingtwo">
+                                                <button class="collapsed" data-toggle="collapse" data-target="#collapsetwo" aria-controls="collapsetwo">
+                                                    Какие услуги вы НЕ оказываете?
+                                                </button>
+                                            </div>
+                                            <div id="collapsetwo" class="collapse" data-parent="#accordionExample">
+                                                <div class="ei-faq-body">
+                                                    Наша компания не занимается ремонтом оргтехники (принтеры, сканеры, МФУ и т.д.) и заправкой картриджей.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ei-faq">
+                                            <div class="ei-faq-header" id="headingthree">
+                                                <button class="collapsed" data-toggle="collapse" data-target="#collapsethree" aria-controls="collapsethree">
+                                                    Как к Вам можно приехать?
+                                                </button>
+                                            </div>
+                                            <div id="collapsethree" class="collapse" data-parent="#accordionExample">
+                                                <div class="ei-faq-body">
+                                                    В этом нет необходимости. Мы сами к Вам приедем в удобное для Вас время.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ei-faq">
+                                            <div class="ei-faq-header" id="headingfour">
+                                                <button class="collapsed" data-toggle="collapse" data-target="#collapsefour">
+                                                    Почему вы просите ежемесячную оплату?
+                                                </button>
+                                            </div>
+                                            <div id="collapsefour" class="collapse" data-parent="#accordionExample">
+                                                <div class="ei-faq-body">
+                                                    Мы работаем с ежемесячной оплатой, чтобы обеспечить непрерывность доступа участников нашей программы к знаниям и опыту наших преподавателей. Мы ценим их вклад в программу, поскольку они постоянно работают на реальных проектах в сфере программирования. Это дает нашим студентам возможность учиться у реальных практиков и быть в курсе последних тенденций в индустрии.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="ei-faq-shape fq-shape-style1" data-parallax="{&quot;x&quot; : 50}"><img src="assets/img/app-landing/shape/fq-shape1.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style2"><img src="assets/img/app-landing/shape/fq-shape2.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style3"><img src="assets/img/app-landing/shape/fq-shape3.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style4" data-parallax="{&quot;y&quot; : 60}"><img src="assets/img/app-landing/shape/fq-shape4.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style5"><img src="assets/img/app-landing/shape/fq-shape5.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style6"><img src="assets/img/app-landing/shape/fq-shape6.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style8"><img src="assets/img/app-landing/shape/fq-shape8.png" alt=""></span>
+                <span class="ei-faq-shape fq-shape-style7"><img src="assets/img/app-landing/shape/fq-shape7.png" alt=""><img src="assets/img/app-landing/shape/fq-shape7.png" alt="">
+                    <img src="assets/img/app-landing/shape/fq-shape7.png" alt=""></span>
+                </section>
+    <!-- End of Faq section
+        ============================================= --> 
+
+
+    <!-- Start of screen-shoot section
+        ============================================= -->
+        <section id="ei-screenshots" class="ei-screenshots-section position-relative">
+            <div class="container">
+                <div class="eight-section-title appeight-headline pera-content text-center">
+                    <span class="eg-title-tag"> App screenshots <i class="square-shape"> <i></i><i></i><i></i><i></i></i></span>
+                    <h2>App screenshots
+                        <span>know properly</span></h2>
+                        <p>As a SAAS web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                    </div>
+					
+
+                    <div class="row ei-appScreenshotCarousel-container swiper-container">
+                        <div class="ei-screen-mobile-image"></div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot01.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot02.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot03.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot04.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/search.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot01.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot02.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot03.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/screenshot04.png)"></div>
+                            <div class="swiper-slide" style="background-image:url(assets/img/app-landing/screenshoot/search.png)"></div>
+                        </div>
+						
+                    </div>
+					
+                    <div class="banner-navigation">
+                        <div class="swiper-button-prev"><span class="fas fa-chevron-left"></span></div>
+                        <div class="swiper-button-next"><span class="fas fa-chevron-right"></span></div>
+                    </div>
+                </div>
+                <div class="screenshoot-vector screenshoot-shape1 position-absolute"> <img src="assets/img/app-landing/shape/ss-shape1.png" alt=""></div>
+                <div class="screenshoot-vector screenshoot-shape2 position-absolute"> <img src="assets/img/app-landing/shape/ss-shape2.png" alt=""></div>
+            </section>
+    <!-- End of screen-shoot section
+        ============================================= --> 
+
+
+   <!-- Start of Testimonial section
+    ============================================= -->
+    <section id="ei-testimonial" class="ei-testimonial-section position-relative" data-background="assets/img/app-landing/background/tbg.jpg">
+        <div class="container">
+            <div class="eight-section-title appeight-headline pera-content text-center">
+                <span class="eg-title-tag">
+                    Testimonials<i class="square-shape"> <i></i><i></i><i></i><i></i> </i>
+                </span>
+                <h2>
+                    Client’s <span>review.</span>
+                </h2>
+                <p>As a SAAS web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+            </div>
+			
+            <div class="ei-testimonial-content">
+                <div id="testimonial-scroller" class="testimonial-scroller-area owl-carousel">
+                    <div class="ei-testimonial-img-text position-relative">
+                        <div class="test--quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="ei-testimonial-img float-left text-center">
+                            <img src="assets/img/app-landing/testimonial/tst1.jpg" alt="">
+                        </div>
+                        <div class="ei-testimonial-text">
+                            <div class="ei-testimonial-name appeight-headline pera-content">
+                                <h3>Liana Zhu</h3>
+                                <span>Senior Director</span>
+                            </div>
+                            <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                            <div class="ei-testi-rate ul-li clearfix">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ei-testimonial-img-text position-relative">
+                        <div class="test--quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="ei-testimonial-img float-left text-center">
+                            <img src="assets/img/app-landing/testimonial/tst2.jpg" alt="">
+                        </div>
+                        <div class="ei-testimonial-text">
+                            <div class="ei-testimonial-name appeight-headline pera-content">
+                                <h3>Дмитрий Яневский</h3>
+                                <span>Боровляны</span>
+                            </div>
+                            <p>Добрый день. Спасибо большое за обучение моего сына уже как 4 месяца, он перестал</p>
+                            <div class="ei-testi-rate ul-li clearfix">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ei-testimonial-img-text position-relative">
+                        <div class="test--quote-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="ei-testimonial-img float-left text-center">
+                            <img src="assets/img/app-landing/testimonial/tst1.jpg" alt="">
+                        </div>
+                        <div class="ei-testimonial-text">
+                            <div class="ei-testimonial-name appeight-headline pera-content">
+                                <h3>Liana Zhu</h3>
+                                <span>Senior Director</span>
+                            </div>
+                            <p>As a app web crawler expert, I help organizations adjust to the expanding significance of internet promoting.</p>
+                            <div class="ei-testi-rate ul-li clearfix">
+                                <ul>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-floatingimg testimonial-float-img1 ul-li-block">
+            <ul>
+                <li><img src="assets/img/app-landing/testimonial/tf1.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tf3.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tst1.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tst2.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="testimonial-floatingimg testimonial-float-img2 ul-li-block">
+            <ul>
+                <li><img src="assets/img/app-landing/testimonial/tf1.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tf3.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tst1.jpg" alt=""></li>
+                <li><img src="assets/img/app-landing/testimonial/tst2.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+   <!-- End of Testimonial section
+    ============================================= -->
+		    
+      <!-- Start of Footer  section
+        ============================================= -->
+        <section id="ei-footer" class="ei-footer-section position-relative">
+            <div id="contact" class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ei-footer-widget pera-content appeight-headline">
+                            <div class="ei-footer-logo">
+                                <img src="assets/img/app-landing/logo/f-logo.png" alt="">
+                            </div>
+                            <div class="ei-payment-mathod">
+                                <p>© 2023 <a href="https://vrCQv0M15MXL.by">vrCQv0M15MXL.by</a></p>
+								<p>
+								<!--LiveInternet counter--><a href="https://www.liveinternet.ru/click" target="_blank"><img id="licntA93A" width="31" height="31" style="border:0" title="LiveInternet" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt=""></a><script>(function(d,s){d.getElementById("licntA93A").src=
+"https://counter.yadro.ru/hit?t44.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+</p>
+								<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="ei-footer-widget appeight-headline ul-li-block">
+							<ul>
+                                <li><a href="index.php">Главная</a></li>
+                                <li><a href="index.php#usl">Услуги</a></li>
+                                <li><a href="index.php#nach">Как начать</a></li>
+                                <li><a href="index.php#faq">Вопросы</a></li>
+                                <li><a href="index.php#contack">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="txts2">
+							<p>Общие вопросы:<br><a target="_blank" href="tel:+375296475565">+37529 647 5565</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://t.me/admadmby"><img src="assets/img/telegram16.png" width="24" height="24" alt="telegram"></a></p>
+							<p>Техническая поддержка:<br><a target="_blank" href="tel:+375293215565">+37529 321 5565</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://t.me/sysadmin_minsk"><img src="assets/img/telegram16.png" width="24" height="24" alt="telegram"></a></p>
+                        <p><a target="_blank" href="mailto:info@vrCQv0M15MXL.by">info@vrCQv0M15MXL.by</a></p>
+						<p><a target="_blank" href="https://www.instagram.com/admadm.by/"><img src="assets/img/inst16.png" alt="instagram">&nbsp;&nbsp;admadm.by</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ei-footer-copyright">
+               
+            </div>
+            <div class="ei-footer-shape1 position-absolute" data-parallax="{&quot;x&quot; : 60}"><img src="assets/img/app-landing/shape/fo-shape1.png" alt=""></div>
+            <div class="ei-footer-shape2 position-absolute" data-parallax="{&quot;y&quot; : 60}"><img src="assets/img/app-landing/shape/fo-shape2.png" alt=""></div>
+            <div class="ei-footer-shape3 position-absolute"><img src="assets/img/app-landing/shape/eimap.png" alt=""></div>
+        </section>
+      <!-- End of Footer  section
+        ============================================= -->    
+		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abc3693464c4ceb7961d0cb83455be079453eee0fa5e7ff81f541e43fad988cee&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+        <!-- JS library -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/appear.js"></script>
+        <script src="assets/js/owl.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/aos.js"></script>
+        <script src="assets/js/slick.js"></script>
+        <script src="assets/js/pagenav.js"></script>
+        <script src="assets/js/odometer.js"></script>
+        <script src="assets/js/bxslider.js"></script>
+        <script src="assets/js/jquery.barfiller.js"></script>
+        <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="assets/js/parallax-scroll.js"></script>
+        <script src="assets/js/swiper.min.js"></script>
+        <script src="assets/js/typer-new.js"></script>
+        <script src="assets/js/side-demo.js"></script>
+        <script src="assets/js/script.js"></script>
+    
+    </body></html>
