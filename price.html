@@ -233,45 +233,32 @@
 <script type="text/javascript">
   var btn = document.querySelector('#btn'),
     komp = document.querySelector('#komp'),
-    serv = document.querySelector('#serv'),
-    rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = 'DevOps',
-    rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = 'Python';
+    month = document.querySelector('#month'),
+    rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = 'DevOps';
 
- // komp slider
-  komp.onchange = function() {
-    var rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = getLanguageName(komp.value);
-  } 
-
- // serv slider
-  serv.onchange = function() {
-    var rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = getLanguageName(serv.value);
+  // month slider
+  month.onchange = function() {
+    var selectedMonth = Number(month.value);
+    var sum = calculateTotalSum(selectedMonth);
+    out.innerHTML = sum + ' рублей';
   }
 
   // Basic function  
   btn.onclick = function() {
-    if (Number(komp.value) <= 1 && Number(serv.value) <= 1) {
-      out.innerHTML = 'DevOps - 350';
-    } else {
-      var sum = (Number(komp.value) * 50) + (Number(serv.value) * 50);
-      out.innerHTML = getLanguageName(sum) + ' - ' + sum;
-    }
+    var selectedMonth = Number(month.value);
+    var sum = calculateTotalSum(selectedMonth);
+    out.innerHTML = sum + ' рублей';
   }
 
-  // Function to get language name based on value
-  function getLanguageName(value) {
-    switch (value) {
-      case '1':
-        return 'DevOps';
-      case '2':
-        return 'Python';
-      case '3':
-        return 'C++';
-      // Добавьте остальные кейсы для других языков программирования
-      default:
-        return '';
+  // Function to calculate total sum
+  function calculateTotalSum(selectedMonth) {
+    if (selectedMonth >= 1 && selectedMonth <= 12) {
+      return selectedMonth * 350;
     }
+    return 0;
   }
 </script>
+
 
 
 
