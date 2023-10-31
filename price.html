@@ -3,22 +3,12 @@
 <html lang="en">
 
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q6GS7DYJ0T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q6GS7DYJ0T');
-</script>
-
     <meta charset="UTF-8">
-    <title>Абонентское обслуживание компьютеров и серверов в Минске, ИТ аутсорсинг с гарантией качества. Оказание IT услуг для юр.лиц. IP-телефония. Комплексный аутсорсинг IT компании.</title>
+    <title>Школа программирования ITNinja. Программирование для всех!</title>
 	<meta name="robots" content="all">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="Обслуживание компьютеров, серверов, ip телефонии, Минске, районе, IT-услуги, IT-аутсорсинг, ИТ-аутсорсинг, программы, софт, ПО, налоги, фонд, фсзн, статистика, клиент банк, admin, admin admin, admin-admin, помощь, компьютеры, серверы, Минск, мастерская, сервис, ремонт, настройка, установка, переустановка, виндовс, windows, оптимизация, замена, чистка, ПК, ноутбуков, компьютеров, нетбуков, выезд, акция, клавиатура, матрица, блок питания, недорого, дешево, оперативно, качественно, быстро, профессионально" />
-	<meta name="description" content="Обслуживание компьютеров, серверов, ip телефонии в Минске и районе с гарантией качества. Оказание IT услуг для юр.лиц. IP-телефония. Комплексный аутсорсинг IT компании. Звоните ☎+375 29 3215565." />
+	<meta name="keywords" content="Школа программирования, Программирование для начинающих, Изучение программирования, Онлайн-школа программирования, Курсы программирования, Обучение программированию, Веб-разработка, Мобильная разработка, Python курсы, Java обучение, Front-end разработка, Back-end разработка, Full-stack разработка, Разработка игр, Data Science курсы.">
+	<meta name="description" content="Новая школа программирования, где преподают действующие работники Парка Высоких Технологий">
 	
     <link rel="shortcut icon" href="assets/img/fv.png" type="image/x-icon">
     <link rel="icon" href="assets/img/fv.png" type="image/x-icon">
@@ -66,7 +56,7 @@
         <header id="header-eight" class="main-header-eight">
             <div class="appheader-content">
                 <div class="site-logo float-left">
-                    <a href="https://admin-admin.by"><img src="assets/img/app-landing/logo/logo1.png" alt=""></a>
+                    <a href="https://hencezze.github.io"><img src="assets/img/app-landing/logo/logo1.png" alt=""></a>
                 </div>
                 <nav class="navigation-eight ul-li">
 				
@@ -165,7 +155,6 @@
         <section id="ei-team" class="ei-team-section">
             <div class="container">
                 <div class="eight-section-title appeight-headline pera-content text-center">
-                    <span class="eg-title-tag">Цены услуг <i class="square-shape"><i></i><i></i><i></i><i></i></i></span>
                     <h2>
                         Цены 
                         <span> на абонентское обслуживание компаний и ИП</span>
@@ -241,31 +230,49 @@
       </div>
     </div>
   </section>
-  <script type="text/javascript">
-    var btn = document.querySelector('#btn'),
+<script type="text/javascript">
+  var btn = document.querySelector('#btn'),
     komp = document.querySelector('#komp'),
     serv = document.querySelector('#serv'),
-    rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = 10;
-    rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = 1;
+    rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = 'DevOps',
+    rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = 'Python';
 
  // komp slider
-    komp.onchange = function(){
-      var rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = komp.value;
-    } 
-	// serv slider
-    serv.onchange = function(){
-      var rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = serv.value;
-    }
+  komp.onchange = function() {
+    var rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = getLanguageName(komp.value);
+  } 
+
+ // serv slider
+  serv.onchange = function() {
+    var rasstoyanie1 = document.querySelector('.rasstoyanie1').innerHTML = getLanguageName(serv.value);
+  }
+
   // Basic function  
-      btn.onclick = function(){
-		  if (Number(komp.value) <= 10 && Number(serv.value) <= 1) {
-			  out.innerHTML = 300;
-		  } else {
-			  var sum = (Number(komp.value)*30) + (Number(serv.value)*80);
-			  out.innerHTML = (sum<300)?300:sum;
-		  }
-     }
-  </script>
+  btn.onclick = function() {
+    if (Number(komp.value) <= 1 && Number(serv.value) <= 1) {
+      out.innerHTML = 'DevOps - 350';
+    } else {
+      var sum = (Number(komp.value) * 50) + (Number(serv.value) * 50);
+      out.innerHTML = getLanguageName(sum) + ' - ' + sum;
+    }
+  }
+
+  // Function to get language name based on value
+  function getLanguageName(value) {
+    switch (value) {
+      case '1':
+        return 'DevOps';
+      case '2':
+        return 'Python';
+      case '3':
+        return 'C++';
+      // Добавьте остальные кейсы для других языков программирования
+      default:
+        return '';
+    }
+  }
+</script>
+
 
 
 
