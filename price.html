@@ -189,68 +189,6 @@
 </table>
 </figure>
 </section>
-  <section>
-    <div class="container pb-3 shadow rounded">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center">Калькулятор расчета стоимости обслуживания</h1>
-        </div>
-        
-          <div class="col-md-12">
-            <form>
-  
-              <div class="row mb-3">
-
-                <div class="form-group col-md-12">
-                  <label class="badge badge-warning" for="komp">Количество компьютеров: <b><span class="rasstoyanie">10</span></b></label>
-                  <input type="range" class="custom-range" min="1" max="100" step="1" id="komp" value="10">
-                </div>
-				<div class="form-group col-md-12">
-                  <label class="badge badge-warning" for="serv">Количество серверов: <b><span class="rasstoyanie1">0</span></b></label>
-                  <input type="range" class="custom-range" min="0" max="10" step="1" id="serv" value="1">
-                </div>
-                
-              </div>
-              <div class="row col-12 mb-3">Стоимость:&nbsp;&nbsp;<b><span id="out">300</span><span class="rub">р.</span></b></div>
-              <div class="row">
-                  <div class="col-md-2 col-12">
-                    <input type="button" name="adress" id="btn" class="btn-block btn btn-primary" value="Считать">
-                  </div>
-              </div>
-            </form>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-<script type="text/javascript">
-  var btn = document.querySelector('#btn'),
-    komp = document.querySelector('#komp'),
-    month = document.querySelector('#month'),
-    rasstoyanie = document.querySelector('.rasstoyanie').innerHTML = 'DevOps';
-
-  // month slider
-  month.onchange = function() {
-    var selectedMonth = Number(month.value);
-    var sum = calculateTotalSum(selectedMonth);
-    out.innerHTML = sum + ' рублей';
-  }
-
-  // Basic function  
-  btn.onclick = function() {
-    var selectedMonth = Number(month.value);
-    var sum = calculateTotalSum(selectedMonth);
-    out.innerHTML = sum + ' рублей';
-  }
-
-  // Function to calculate total sum
-  function calculateTotalSum(selectedMonth) {
-    if (selectedMonth >= 1 && selectedMonth <= 12) {
-      return selectedMonth * 350;
-    }
-    return 0;
-  }
-</script>
 
 <!-- Start of str-testimonial section
             ============================================= -->
@@ -437,10 +375,9 @@ alt=""/></a><script>(function(d,s){d.getElementById("licntA93A").src=
                     </div>
                     <div class="col-lg-4">
                         <div class="txts2">
-							<p>Общие вопросы:<br><a target="_blank" href="tel:+375296475565">+37529 647 5565</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://t.me/admadmby"><img src="assets/img/telegram16.png" width="24" height="24"  alt="telegram"></a></p>
-							<p>Техническая поддержка:<br><a target="_blank" href="tel:+375293215565">+37529 321 5565</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://t.me/sysadmin_minsk"><img src="assets/img/telegram16.png" width="24" height="24"  alt="telegram"></a></p>
-                        <p><a target="_blank" href="mailto:info@admin-admin.by">info@admin-admin.by</a></p>
-						<p><a target="_blank" href="https://www.instagram.com/admadm.by/"><img src="assets/img/inst16.png" alt="instagram">&nbsp;&nbsp;admadm.by</a></p>
+							<p>Общие вопросы:<br><a target="_blank" href="tel:+375445400216">+375445400216</a>&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://t.me/itninjaby"><img src="assets/img/telegram16.png" width="24" height="24"  alt="telegram"></a></p>
+                        <p><a target="_blank" href="mailto:info@admin-admin.by">info@itninja.by</a></p>
+						<p><a target="_blank" href="https://www.instagram.com/itninja.by/"><img src="assets/img/inst16.png" alt="instagram">&nbsp;&nbsp;itninja.by</a></p>
                         </div>
                     </div>
                 </div>
